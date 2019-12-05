@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style type="text/css" >
+        /*body{*/
+        /*    margin: 0;*/
+        /*    display: inline;*/
+        /*    height: 800px;*/
+        /*    width: 100%;*/
+        /*}*/
+        /*nav{*/
+        /*    width:100%;*/
+        /*    height:60px;*/
+        /*    background-color: blueviolet;*/
+        /*    margin:0;*/
+        /*}*/
+        /*header .nav-list{*/
+        /*    list-style: none;*/
+        /*}*/
+        /*header .nav-list li {*/
+        /*    float: left;*/
+        /*}*/
+        /*header ul.nav-list a{*/
+        /*    text-decoration: none;*/
+        /*    line-height: 60px;*/
+        /*    font-size: 20px;*/
+        /*    margin-left: 30px;*/
+        /*    color: aliceblue;*/
+        /*}*/
+        /*header ul.nav-list a:hover{*/
+        /*    color:red;*/
+        /*}*/
+        /*div.body{*/
+        /*   padding:0;*/
+        /*   margin:0;*/
+        /*   border:0;*/
+        /*   display: inline;*/
+        /*}*/
+        /*div.body .menu{*/
+        /*    margin:0;*/
+        /*    width: 15%;*/
+        /*    height: 1070px;*/
+        /*    background-color: aqua;*/
+        /*    float: left;*/
+        /*}*/
+        /*div .menu ul.menu-list{*/
+        /*    list-style: none;*/
+        /*}*/
+        /*div .menu ul.menu-list li a{*/
+        /*    color: black;*/
+        /*}*/
+        /*div .menu ul.menu-list li a:hover{*/
+        /*    color: red;*/
+        /*}*/
+        /*a:hover{*/
+        /*    color: red;*/
+        /*}*/
+        /*div.news-list{*/
+        /*    height: 600px;*/
+        /*    width: 85%;*/
+        /*    float: left;*/
+        /*    background-color: coral;*/
+        /*}*/
+        /*span.dongtai{*/
+        /*    font-size: 24px;*/
+        /*    color: #fff;*/
+        /*}*/
+        /*ol.news-list{*/
+        /*    line-height: 26px;*/
+        /*}*/
+        /*div.back-to-top{*/
+        /*    color: chartreuse;*/
+        /*    position: fixed;*/
+        /*    left: 939px;*/
+        /*    bottom: 40px;*/
+        /*}*/
+        /*div.back-to-top a{*/
+        /*    text-decoration:none;*/
+        /*    background-color: chartreuse;*/
+        /*    color: black;*/
+        /*}*/
+        /*div.img-code{*/
+        /*    position: fixed;*/
+        /*    right: 0;*/
+        /*    bottom: 40px;*/
+        /*}*/
+        /*div.img-code .close{*/
+        /*    position: fixed;*/
+        /*    right: 16px;*/
+        /*    bottom: 432px;*/
+        /*}*/
+        /*div.img-code .description{*/
+        /*    position: fixed;*/
+        /*    right: 137px;*/
+        /*    bottom: 60px;*/
+        /*}*/
+        /*#footer{*/
+        /*    color: black;*/
+        /*    position: fixed;*/
+        /*    bottom: 0;*/
+        /*    left: 711px;*/
+        /*}*/
+    </style>
+    <link type="text/css" rel="stylesheet" href="../CSS/index.css">
+</head>
+<body>
+<header>
+<!--    导航栏-->
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="company_profile.html">公司简介</a></li>
+            <li><a href="business_area.html">业务领域</a></li>
+            <li><a href="success_case.html">成功案例</a></li>
+            <li><a href="recruitment.html">招贤纳士</a></li>
+            <li><a href="contact_us.html">联系我们</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="body">
+    <div class="menu">
+        <ul class="menu-list">
+            <li><a>python</a></li>
+            <li><a>java</a></li>
+            <li><a>JavaScript</a></li>
+            <li><a>DOM</a></li>
+        </ul>
+    </div>
+<!--    新闻列表-->
+    <div class="news-list">
+        <ol class="news-list">
+            <span class="dongtai">&gt;&gt;&gt;公司动态</span>
+            <hr />
+            <li><a>宣威市松山矿业有限公司路演</a></li>
+            <li><a>河南路演</a></li>
+            <li><a>岳阳路演融资</a></li>
+            <li><a>宜昌路演</a></li>
+        </ol>
+    </div>
+<!--    轮播图-->
+<!--    <div class="carousel">-->
+<!--        <span class="top">&lt;</span><img src="Images/1.jpg"><span class="top">&gt;</span>-->
+<!--    </div>-->
+</div>
+<!--二维码-->
+<div class="img-code" v-if="show">
+    <!-- <button><img class="close" src="img/close.gif"></button> -->
+	<button class="close" @click='dispaly'>关闭</button>
+<!--    <img class="close" src="Images/close.gif">-->
+    <div class="description">
+        微信扫描二维码联系官方客服
+    </div>
+    <img src="../Images/img-code.jpg">
+</div>
+<div class="back-to-top">
+    <a href="#"><img src="../Images/back-to-top.jpg"></a>
+</div>
+<footer id="footer">
+     <p>&copy; CopyRight 2019~2020 深圳中泰龙股权投资基金管理有限公司 </p>
+</footer>
+<!--<div id="img">-->
+<!--    {{message}}-->
+<!--</div>-->
+<script>
+    var app = new Vue({
+  el: '.img-code',
+  data: {
+
+    show:true,
+  },
+  methods:{
+	  dispaly:function(){
+		this.show=false;
+	  }
+  }
+});
+</script>
+</body>
+</html>
